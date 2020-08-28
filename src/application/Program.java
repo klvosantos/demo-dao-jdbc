@@ -15,7 +15,6 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
 		System.out.println("=== TEST 1: seller findById ====");
@@ -39,7 +38,6 @@ public class Program {
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.00, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId());
-		
 
 		System.out.println("\n=== TEST 5: seller update ====");
 		seller = sellerDao.findById(1);
@@ -52,5 +50,7 @@ public class Program {
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
 		System.out.println("Delete completed");
+		
+		sc.close();
 	}
 }

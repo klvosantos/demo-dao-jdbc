@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class DB {
-
+	//Classe com metodos estaticos auxiliares, estes metodos server para obter e fechar uma conexão com o banco de dados
 	private static Connection conn = null;
 	
 	public static Connection getConnection() {
