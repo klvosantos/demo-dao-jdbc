@@ -156,7 +156,8 @@ public class SellerDaoJDBC implements SellerDao{
 	}
 
 	@Override
-	public List<Seller> findAll() {PreparedStatement st = null;
+	public List<Seller> findAll() {
+	PreparedStatement st = null;
 	ResultSet rs = null;
 	try {
 		st = conn.prepareStatement(
@@ -214,7 +215,7 @@ public class SellerDaoJDBC implements SellerDao{
 			
 			while (rs.next()) {
 				
-				Department dep = map.get(rs.getInt("DepartmentId")); // Se ja existe o map.get vai pegar ele e o if (dep ==  null) sera falso. Se não existir ai ele retornara null e entrara no if
+				Department dep = map.get(rs.getInt("DepartmentId")); //Se ja existe o map.get vai pegar ele e o if (dep ==  null) sera falso. Se não existir ai ele retornara null e entrara no if
 				
 				if (dep ==  null) {
 					dep = instantiateDepartment(rs);
